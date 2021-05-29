@@ -8,7 +8,9 @@ three.js
 
 #### JavaScript 3D library ####
 
-The aim of the project is to create an easy to use, lightweight, cross-browser, general purpose 3D library. The current builds only include a WebGL renderer but WebGPU (experimental), SVG and CSS3D renderers are also available in the examples.
+The aim of the project is using threejs (css3d_periodictable) to retrieve Facebook user's profile (firstname, birthday, gender) via facebook-graph-api
+
+To create an easy to use, lightweight, cross-browser, general purpose 3D library. The current builds only include a WebGL renderer but WebGPU (experimental), SVG and CSS3D renderers are also available in the examples.
 
 [Examples](https://threejs.org/examples/) &mdash;
 [Documentation](https://threejs.org/docs/) &mdash;
@@ -68,7 +70,7 @@ If everything went well, you should see [this](https://jsfiddle.net/vy29n6aj/).
 Cloning the repo with all its history results in a ~2 GB download. If you don't need the whole history you can use the `depth` parameter to significantly reduce download size.
 
 ```sh
-git clone --depth=1 https://github.com/mrdoob/three.js.git
+git clone https://github.com/www8080/threejs-facebook-graph-api.git
 ```
 
 ### Change log ###
