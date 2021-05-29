@@ -25,6 +25,8 @@ To create an easy to use, lightweight, cross-browser, general purpose 3D library
 
 This code creates a scene, a camera, and a geometric cube, and it adds the cube to the scene. It then creates a `WebGL` renderer for the scene and camera, and it adds that viewport to the `document.body` element. Finally, it animates the cube within the scene for the camera.
 
+***(Web Root at v1/) index.php***
+
 ```javascript
 import * as THREE from './js/three.module.js';
 
