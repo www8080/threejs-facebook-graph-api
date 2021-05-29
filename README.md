@@ -28,6 +28,7 @@ This code creates a scene, a camera, and a geometric cube, and it adds the cube 
 ***(Web Root at v1/) index.php***
 
 ```javascript
+//***Original three.js by mrdoob, thanks mrdoob!***
 import * as THREE from './js/three.module.js';
 
 let camera, scene, renderer;
