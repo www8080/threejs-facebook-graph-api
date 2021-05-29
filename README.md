@@ -1,4 +1,4 @@
-three.js
+threejs-facebook-graph-api
 ========
 
 [![NPM Package][npm]][npm-url]
