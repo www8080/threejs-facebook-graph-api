@@ -1,4 +1,4 @@
-ThreeJS Facebook Friends list profile
+ThreeJS - Facebook Graph API - Get friends list profile - 3D object
 ========
 
 [![NPM Package][npm]][npm-url]
