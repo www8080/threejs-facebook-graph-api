@@ -296,11 +296,15 @@ function ageCalculator($dob){
 					element.className = 'element';
 					//pink
 					if (friend_gender[j] == "F")
-					element.style.backgroundColor = 'rgba(255, 129, 181,' + ( 0.4690487523459153 * 0.5 + 0.25 ) + ')';
+						element.style.backgroundColor = 'rgba(255,20,147)';
+						//Backgroup Transparent
+						//element.style.backgroundColor = 'rgba(255,105,180,' + ( 0.4690487523459153 * 0.5 + 0.25 ) + ')';
 					//blue
 					if (friend_gender[j] == "M")
-					element.style.backgroundColor = 'rgba(0,127,255,' + ( 0.3690487523459153 * 0.5 + 0.25 ) + ')';
-					//element.style.backgroundColor = '#FFC0CB';
+						element.style.backgroundColor = 'rgba(28,28,240)';
+						//Backgroup Transparent
+						// element.style.backgroundColor = 'rgba(0,127,255,' + ( 0.3690487523459153 * 0.5 + 0.25 ) + ')';
+						//element.style.backgroundColor = '#FFC0CB';
 
 
 					const number = document.createElement( 'div' );

@@ -47,7 +47,7 @@ if($result) {
   $friend_arr_js   = json_encode($friend_arr);
 
   dd($friend_arr);
-  //dd($friend_arr_js);
+  // dd($friend_arr_js);
 
   echo "<br>Total Friend: " . sizeof($obj['data']);
 
