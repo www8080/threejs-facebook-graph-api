@@ -74,11 +74,7 @@ function animation( time ) {
 }
 ```
 
-If everything went well, you should see [this](https://jsfiddle.net/vy29n6aj/).
-
 ### Cloning this repository ###
-
-Cloning the repo with all its history results in a ~2 GB download. If you don't need the whole history you can use the `depth` parameter to significantly reduce download size.
 
 ```sh
 git clone https://github.com/www8080/threejs-facebook-graph-api.git
@@ -94,3 +90,8 @@ git clone https://github.com/www8080/threejs-facebook-graph-api.git
 [npmtrends-url]: https://www.npmtrends.com/three
 [lgtm]: https://img.shields.io/lgtm/alerts/github/mrdoob/three.js
 [lgtm-url]: https://lgtm.com/projects/g/mrdoob/three.js/
+
+
+
+
+
