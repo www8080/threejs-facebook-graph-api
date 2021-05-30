@@ -1,5 +1,5 @@
 <?php
-// https://graph.facebook.com/v10.0/101200052181927/friends?access_token=783263342388998|dkQ1iavY-DR9E25zXOlKmU_6wpk&pretty=1&limit=100&debug=all&fields=id,name,gender,first_name,birthday
+// https://graph.facebook.com/v10.0/101200052181927/friends?access_token=783263342388998|dkQ1iavY-DR9E25zXOlKmU_6wpk&pretty=1&limit=150&debug=all&fields=id,name,gender,first_name,birthday
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
@@ -11,7 +11,7 @@ $access_token = '783263342388998|dkQ1iavY-DR9E25zXOlKmU_6wpk';
 $fields       = 'id,name,gender,first_name,birthday';
 $user_id      = '101200052181927';
 $pretty       = 1;
-$limit        = 100;
+$limit        = 150;
 $api_url      = 'https://graph.facebook.com/'.$app_ver.'/'.$user_id.'/friends?access_token='.$access_token.'&pretty='.$pretty.'&limit='.$limit.'&debug='.$debug_mode.'&fields='.$fields;
 
 
@@ -104,6 +104,7 @@ function ageCalculator($dob){
 			<button id="sphere">SPHERE</button>
 			<button id="helix">HELIX</button>
 			<button id="grid">GRID</button>
+			<button id="cylinder">CYLINDER</button>
 		</div>
 
 		<script type="module">
@@ -149,12 +150,13 @@ function ageCalculator($dob){
 
 
 			//Debug Reference
-			// const table = [
-			// 	"Cindy", "Female", "28", 1, 1,
-			// 	"Michael", "Femlae", "21", 2, 1,
-			// 	"Li", "Lithium", "6.941", 1, 2,
-			// 	"Be", "Beryllium", "9.012182", 2, 2,
-			// 	"B", "Boron", "10.811", 13, 2,
+			const table2 = [
+				"Cindy", "Female", "28", 1, 1,
+				"Michael", "Femlae", "21", 2, 1,
+				"Li", "Lithium", "6.941", 1, 2,
+				"Be", "Beryllium", "9.012182", 2, 2,
+				"B", "Boron", "10.811", 3, 2,
+			];
 			// 	"C", "Carbon", "12.0107", 14, 2,
 			// 	"N", "Nitrogen", "14.0067", 15, 2,
 			// 	"O", "Oxygen", "15.9994", 16, 2,
@@ -274,7 +276,7 @@ function ageCalculator($dob){
 			let controls;
 
 			const objects = [];
-			const targets = { table: [], sphere: [], helix: [], grid: [] };
+			const targets = { table: [], table2: [], sphere: [], helix: [], grid: [], cylinder: [] };
 
 			init();
 			animate();
@@ -324,13 +326,16 @@ function ageCalculator($dob){
 
 					objects.push( objectCSS );
 
-					//
-
 					const object = new THREE.Object3D();
 					object.position.x = ( table[ i + 3 ] * 140 ) - 1330;
 					object.position.y = - ( table[ i + 4 ] * 180 ) + 990;
 
+					const object3 = new THREE.Object3D();
+					object3.position.x = ( table[ i + 3 ] * 140 ) - 1330;
+					object3.position.y = - ( table[ i + 4 ] * 180 ) + 990;
+
 					targets.table.push( object );
+					//targets.cylinder.push( object3 );
 
 				}
 
@@ -390,7 +395,147 @@ function ageCalculator($dob){
 
 				}
 
-				//
+
+				// cylinder
+
+				//console.log(targets.table);
+				//console.log(table.length);
+
+				//var vector = new THREE.Vector3();
+				var lookAt = new THREE.Vector3();
+				var lookAtScale = new THREE.Vector3(1.1, 1, 1.1);
+				var itemH = 180;
+				var itemW = 140;
+				var itemsPerRound = 15;
+				var rounds = Math.ceil(table.length / 5 / itemsPerRound);
+
+				console.log("Table length, Rounds = "+table.length, rounds);
+
+				var sectorStep = Math.PI * 2 / itemsPerRound;
+				var mainRadius = 390;
+				 
+				for (let i = 0, j = 0; i < table.length; i+=5, j++) {
+					let ii = i / 5;
+				  	let round = Math.floor(ii / itemsPerRound);
+				    let sector = (ii % itemsPerRound) * sectorStep;
+				    
+				    //console.log(i, i / itemsPerRound, i % itemsPerRound)
+				    
+				    let h = (itemH * round) - (itemH * (rounds * 0.5));
+				    //console.log("mainRadius:"+mainRadius+"--sector:"+sector+"--h:"+h);
+				    let object = new THREE.Object3D();
+				    object.position.setFromCylindricalCoords(mainRadius, sector, h);
+				    lookAt.copy(object.position);
+				    lookAt.multiply(lookAtScale);
+				    object.lookAt(lookAt);
+				    targets.cylinder.push(object);
+
+
+				    //TESTING --------------------------
+				    //TOP
+				    let vector1 = new THREE.Vector3();
+				    let vector2 = new THREE.Vector3();
+				    let vector3 = new THREE.Vector3();
+				    let vector4 = new THREE.Vector3();
+				   	if (i > 400) { //change to percentage
+					 	const theta2 = ii * 0.675 + Math.PI;
+						const y2 = - ( ii * 8 ) + 450;
+
+						const object2 = new THREE.Object3D();
+						const object3 = new THREE.Object3D();
+						const object4 = new THREE.Object3D();
+						const object5 = new THREE.Object3D();
+						console.log(theta2);
+
+						object2.position.setFromCylindricalCoords( 305, theta2, 280 );
+												
+						vector1.x = object2.position.x * 2;
+						vector1.y = object2.position.y * 320;
+						vector1.z = object2.position.z * 2;
+
+						object2.lookAt( vector1 );
+						targets.cylinder.push( object2 );
+
+						//Top Inner
+						if (i > 430) {
+							const theta3 = ii * 1.999 + Math.PI;
+							const y2 = - ( ii * 8 ) + 450;
+							object3.position.setFromCylindricalCoords( 125, theta3, 280 );
+
+							vector2.x = object3.position.x * 2;
+							vector2.y = object3.position.y * 320;
+							vector2.z = object3.position.z * 2;
+
+							object3.lookAt( vector2 );
+							targets.cylinder.push( object3 );
+						}
+
+
+						//Bottom
+						if (i > 410 || i < 450) {
+							const theta4 = ii * 0.675 + Math.PI;
+							const y2 = - ( ii * 8 ) + 450;
+							object4.position.setFromCylindricalCoords( 305, theta4, -800 );
+
+							vector3.x = object4.position.x * 2;
+							vector3.y = object4.position.y * 320;
+							vector3.z = object4.position.z * 2;
+
+							object4.lookAt( vector3 );
+							targets.cylinder.push( object4 );
+						}
+
+						//Bottom Inner
+						if (i > 430) {
+							const theta5 = ii * 1.999 + Math.PI;
+							const y2 = - ( ii * 8 ) + 450;
+							object5.position.setFromCylindricalCoords( 125, theta5, -800 );
+
+							vector4.x = object5.position.x * 2;
+							vector4.y = object5.position.y * 320;
+							vector4.z = object5.position.z * 2;
+
+							object5.lookAt( vector4 );
+							targets.cylinder.push( object5 );
+						}
+					}
+
+					
+
+				  }
+				  //console.log(table2.length);
+				  //Cylinder top-bottom
+				//  for (let i = 0; i < table2.length; i++) {
+				//   	const theta2 = i * 0.175 + Math.PI;
+				// 	const y2 = - ( i * 8 ) + 450;
+
+				// 	const object = new THREE.Object3D();
+
+				// 	object.position.setFromCylindricalCoords( 900, theta2, y2 );
+
+				// 	vector.x = object.position.x * 2;
+				// 	vector.y = object.position.y;
+				// 	vector.z = object.position.z * 2;
+
+				// 	object.lookAt( vector );
+
+				// 	targets.cylinder.push( object );
+				// }
+
+				// for ( let i = 0; i < objects.length; i ++ ) {
+
+				// 	const object = new THREE.Object3D();
+
+				// 	object.position.x = ( ( i % 5 ) * 400 ) - 800;
+				// 	object.position.y = ( - ( Math.floor( i / 5 ) % 5 ) * 400 ) + 800;
+				// 	object.position.z = ( Math.floor( i / 25 ) ) * 1000 - 2000;
+
+				// 	targets.cylinder.push( object );
+
+				// }
+
+
+				//Renderer
 
 				renderer = new CSS3DRenderer();
 				renderer.setSize( window.innerWidth, window.innerHeight );
@@ -431,7 +576,16 @@ function ageCalculator($dob){
 
 				} );
 
+				var buttonCylinder = document.getElementById('cylinder');
+				buttonCylinder.addEventListener('click', function() {
+
+				    transform(targets.cylinder, 2000);
+
+				}, false);
+
+				//Targets to show upon script load
 				transform( targets.table, 2000 );
+				//transform( targets.cylinder, 2000 );
 
 				//
 

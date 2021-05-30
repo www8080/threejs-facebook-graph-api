@@ -1,5 +1,5 @@
 <?php
-// https://graph.facebook.com/v10.0/101200052181927/friends?access_token=783263342388998|dkQ1iavY-DR9E25zXOlKmU_6wpk&pretty=1&limit=100&debug=all&fields=id,name,gender,first_name,birthday
+// https://graph.facebook.com/v10.0/101200052181927/friends?access_token=783263342388998|dkQ1iavY-DR9E25zXOlKmU_6wpk&pretty=1&limit=150&debug=all&fields=id,name,gender,first_name,birthday
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
@@ -10,7 +10,7 @@ $access_token = '783263342388998|dkQ1iavY-DR9E25zXOlKmU_6wpk';
 $fields       = 'id,name,gender,first_name,birthday';
 $user_id      = '101200052181927';
 $pretty       = 1;
-$limit        = 100;
+$limit        = 150;
 $api_url      = 'https://graph.facebook.com/'.$app_ver.'/'.$user_id.'/friends?access_token='.$access_token.'&pretty='.$pretty.'&limit='.$limit.'&debug='.$debug_mode.'&fields='.$fields;
 
 //Initiate CURL request
@@ -46,8 +46,8 @@ if($result) {
   }
   $friend_arr_js   = json_encode($friend_arr);
 
-  //dd($friend_arr);
-  dd($friend_arr_js);
+  dd($friend_arr);
+  //dd($friend_arr_js);
 
   echo "<br>Total Friend: " . sizeof($obj['data']);
 
