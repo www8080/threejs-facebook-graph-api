@@ -82,9 +82,6 @@ Cloning the repo with all its history results in a ~2 GB download. If you don't 
 git clone https://github.com/www8080/threejs-facebook-graph-api.git
 ```
 
-### Change log ###
-
-[Releases](https://github.com/mrdoob/three.js/releases)
 
 
 [npm]: https://img.shields.io/npm/v/three
