@@ -1,4 +1,4 @@
-threejs-facebook-graph-api
+ThreeJS Facebook Friends list profile
 ========
 
 [![NPM Package][npm]][npm-url]
@@ -6,12 +6,15 @@ threejs-facebook-graph-api
 [![NPM Downloads][npm-downloads]][npmtrends-url]
 [![Language Grade][lgtm]][lgtm-url]
 
-#### Facebook Graph API ####
+#### Facebook Graph API integrate with three.js ####
 
-The aim of the project is using PHP + threejs (css3d_periodictable) to retrieve Facebook user's profile (firstname, birthday, gender) via facebook graph api v10.0
+![Image](https://drive.google.com/thumbnail?id=16GjIzZIlLd2SZzRBSpND2PLsiGlxOJks)              ![Image](https://drive.google.com/thumbnail?id=1FrG0Xp7y4ymbzHVrJwYWVoroy2K8Yz58)  
 
-You can create your Facebook Graph API account at https://developers.facebook.com/
+The aim of the project is using PHP + threejs (css3d_periodictable) to retrieve Facebook user's profile (e.g. your friend's firstname, birthday, gender) via facebook graph api v10.0, and display them in in 3D table, sphere, Helix, Grid, Cylinder by using three.js
 
+You can create your Facebook Graph API account at (https://developers.facebook.com/)
+
+Facebook graph api reference URL: (https://developers.facebook.com/docs/graph-api/reference/v10.0/user/friends)
 
 #### three.js - A JavaScript 3D library ####
 
@@ -71,19 +74,12 @@ function animation( time ) {
 }
 ```
 
-If everything went well, you should see [this](https://jsfiddle.net/vy29n6aj/).
-
 ### Cloning this repository ###
-
-Cloning the repo with all its history results in a ~2 GB download. If you don't need the whole history you can use the `depth` parameter to significantly reduce download size.
 
 ```sh
 git clone https://github.com/www8080/threejs-facebook-graph-api.git
 ```
 
-### Change log ###
-
-[Releases](https://github.com/mrdoob/three.js/releases)
 
 
 [npm]: https://img.shields.io/npm/v/three
@@ -94,3 +90,8 @@ git clone https://github.com/www8080/threejs-facebook-graph-api.git
 [npmtrends-url]: https://www.npmtrends.com/three
 [lgtm]: https://img.shields.io/lgtm/alerts/github/mrdoob/three.js
 [lgtm-url]: https://lgtm.com/projects/g/mrdoob/three.js/
+
+
+
+
+

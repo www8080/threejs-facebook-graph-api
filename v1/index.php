@@ -436,7 +436,7 @@ function ageCalculator($dob){
 
 
 				    //TESTING --------------------------
-				    //TOP
+				    //TOP Outer
 				    let vector1 = new THREE.Vector3();
 				    let vector2 = new THREE.Vector3();
 				    let vector3 = new THREE.Vector3();
@@ -475,7 +475,7 @@ function ageCalculator($dob){
 						}
 
 
-						//Bottom
+						//Bottom Outer
 						if (i > 410 || i < 450) {
 							const theta4 = ii * 0.675 + Math.PI;
 							const y2 = - ( ii * 8 ) + 450;
