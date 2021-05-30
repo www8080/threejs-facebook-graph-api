@@ -8,7 +8,7 @@ ThreeJS Facebook Friends list profile
 
 #### Facebook Graph API integrate with three.js ####
 
-![Image](https://drive.google.com/thumbnail?id=16GjIzZIlLd2SZzRBSpND2PLsiGlxOJks) 
+![Image](https://drive.google.com/thumbnail?id=16GjIzZIlLd2SZzRBSpND2PLsiGlxOJks)  ![Image](https://drive.google.com/thumbnail?id=16GjIzZIlLd2SZzRBSpND2PLsiGlxOJks) 
 ![Image](https://drive.google.com/thumbnail?id=1FrG0Xp7y4ymbzHVrJwYWVoroy2K8Yz58) 
 ![Image](https://drive.google.com/thumbnail?id=1qNB-tv-AtJwMm4rHN6CVEfeOgkuH3-GL)
 
