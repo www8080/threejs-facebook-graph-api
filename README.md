@@ -8,6 +8,8 @@ ThreeJS Facebook Friends list profile
 
 #### Facebook Graph API integrate with three.js ####
 
+![Test Image 8](https://github.com/www8080/threejs-facebook-graph-api/tree/master/files/preview1.png 352)
+
 The aim of the project is using PHP + threejs (css3d_periodictable) to retrieve Facebook user's profile (e.g. your friend's firstname, birthday, gender) via facebook graph api v10.0, and display them in in 3D table, sphere, Helix, Grid, Cylinder by using three.js
 
 You can create your Facebook Graph API account at https://developers.facebook.com/
