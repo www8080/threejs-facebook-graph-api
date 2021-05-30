@@ -6,9 +6,14 @@ threejs-facebook-graph-api
 [![NPM Downloads][npm-downloads]][npmtrends-url]
 [![Language Grade][lgtm]][lgtm-url]
 
-#### JavaScript 3D library ####
+#### Facebook Graph API ####
 
-The aim of the project is using threejs (css3d_periodictable) to retrieve Facebook user's profile (firstname, birthday, gender) via facebook-graph-api
+The aim of the project is using PHP + threejs (css3d_periodictable) to retrieve Facebook user's profile (firstname, birthday, gender) via facebook graph api v10.0
+
+You can create your Facebook Graph API account at https://developers.facebook.com/
+
+
+#### three.js - A JavaScript 3D library ####
 
 To create an easy to use, lightweight, cross-browser, general purpose 3D library. The current builds only include a WebGL renderer but WebGPU (experimental), SVG and CSS3D renderers are also available in the examples.
 
